@@ -3,7 +3,7 @@ services:
     - docker
 
 before_install: #telling travis what to do before starting the test
-    - docker build -t surya3/docker-react -f Docker.dev .
+    - docker build -t surya3/docker-react -f Dockerfile.dev .
 
 
 script:   #telling travis to run the following test/tests
