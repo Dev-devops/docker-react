@@ -7,4 +7,4 @@ before_install: #telling travis what to do before starting the test
 
 
 script:   #telling travis to run the following test/tests
-    - docker run -e CI=true surya3/docker-react npm run test    
+    - docker run -e CI=true surya3/docker-react npm run test -- --coverage  
