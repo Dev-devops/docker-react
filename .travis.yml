@@ -1,0 +1,10 @@
+sudo: required
+services:
+    - docker
+
+before_install: #telling travis what to do before starting the test
+    - docker build -t surya3/docker-react -f Docker.dev .
+
+
+script:   #telling travis to run the following test/tests
+    - docker run surya3/docker-react npm run test -- --coverage
