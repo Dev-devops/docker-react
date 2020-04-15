@@ -8,3 +8,17 @@ before_install: #telling travis what to do before starting the test
 
 script:   #telling travis to run the following test/tests
     - docker run -e CI=true surya3/docker-react npm run test 
+
+deploy: 
+    provider: elasticbeanstalk
+    region: "eu-west-2"
+    app: "docker-react"
+    env: "DockerReact-env"
+    bucket_name: "elasticbeanstalk-eu-west-2-533402793976"
+    bucket_path: "docker-react"
+    on: 
+        branch: master
+
+    acess_key_id: $AWS_ACCESS_KEY
+    secret_acess_key: 
+        secure: "$AWS_SECRET_KEY"
